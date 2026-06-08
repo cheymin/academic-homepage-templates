@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="zh-CN" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Academic homepage of [Your Name] — PhD researcher in machine learning and artificial intelligence.">
-    <meta property="og:title" content="[Your Name] | Academic Homepage">
-    <meta property="og:description" content="PhD researcher in machine learning and artificial intelligence.">
-    <title>Your Name | Academic Homepage</title>
+    <meta name="description" content="Fly 的个人主页 — 硬核技术爱好者、白帽破解者、自托管服务维护者">
+    <meta property="og:title" content="Fly | Personal Homepage">
+    <meta property="og:description" content="14岁重庆初中生，硬核白帽破解者，维护近20个自建服务">
+    <title>Fly | Personal Homepage</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -19,16 +19,16 @@
         <div class="nav-container">
             <a href="#" class="nav-logo">
                 <span class="logo-bracket">[</span>
-                <span class="logo-text" data-config="initials">YN</span>
+                <span class="logo-text" data-config="initials">FL</span>
                 <span class="logo-bracket">]</span>
             </a>
             <div class="nav-links">
-                <a href="#about">About Me</a>
-                <a href="#publications">Publications</a>
-                <a href="#projects">Projects</a>
-                <a href="#news">News</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact">Contact</a>
+                <a href="#about">关于我</a>
+                <a href="#projects">项目</a>
+                <a href="#skills">技能</a>
+                <a href="#news">动态</a>
+                <a href="#experience">经历</a>
+                <a href="#contact">联系</a>
             </div>
             <div class="nav-controls">
                 <button type="button" class="nav-btn theme-toggle" id="themeToggle" aria-label="Toggle theme">
@@ -55,30 +55,28 @@
         <div class="hero-content">
             <div class="hero-text">
                 <p class="hero-greeting">Hello, I'm</p>
-                <h1 class="hero-name" data-config="name">Your Name</h1>
-                <p class="hero-title" data-config="role_university">PhD Candidate at Your University</p>
+                <h1 class="hero-name" data-config="name">Fly</h1>
+                <p class="hero-title" data-config="role_university">初中生 / 硬核技术爱好者 @ 江北中学</p>
                 <p class="hero-description" data-config="bio">
-                    Exploring the frontiers of <span class="highlight">your research area</span>,
-                    <span class="highlight">machine learning</span>, and <span class="highlight">artificial intelligence</span>.
-                    Building intelligent systems that advance scientific discovery.
+                    14岁重庆初中生，硬核白帽破解者，维护近20个自建服务。热爱嵌入式破解、网络技术、服务自托管。
                 </p>
-                <div class="hero-stats">
+                <div class="hero-stats" id="cfg-stats">
                     <div class="stat">
-                        <span class="stat-number">10+</span>
-                        <span class="stat-label">Publications</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">100+</span>
-                        <span class="stat-label">Citations</span>
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">自建服务</span>
                     </div>
                     <div class="stat">
                         <span class="stat-number">5+</span>
-                        <span class="stat-label">Projects</span>
+                        <span class="stat-label">编程语言</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">技术教程</span>
                     </div>
                 </div>
                 <div class="hero-cta">
-                    <a href="#publications" class="btn btn-primary">View Publications</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                    <a href="#projects" class="btn btn-primary">查看项目</a>
+                    <a href="#contact" class="btn btn-secondary">联系我</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -94,49 +92,11 @@
         </div>
     </section>
 
-    <!-- Publications Section -->
-    <section id="publications" class="section">
-        <div class="section-container">
-            <h2 class="section-title">
-                <span class="title-icon">//</span> Publications
-            </h2>
-            <div class="publications-list" id="cfg-publications">
-                <article class="pub-card" data-year="2025">
-                    <div class="pub-year">2025</div>
-                    <div class="pub-content">
-                        <div class="pub-header">
-                            <h3 class="pub-title">Your Paper Title Here</h3>
-                            <div class="pub-links">
-                                <a href="#" class="pub-link">PDF</a>
-                                <a href="#" class="pub-link">Code</a>
-                            </div>
-                        </div>
-                        <p class="pub-authors"><strong>Your Name</strong>, Co-Author 1, Co-Author 2</p>
-                        <p class="pub-venue">Conference/Journal Name 2025</p>
-                    </div>
-                </article>
-                <article class="pub-card" data-year="2024">
-                    <div class="pub-year">2024</div>
-                    <div class="pub-content">
-                        <div class="pub-header">
-                            <h3 class="pub-title">Another Paper Title</h3>
-                            <div class="pub-links">
-                                <a href="#" class="pub-link">PDF</a>
-                            </div>
-                        </div>
-                        <p class="pub-authors"><strong>Your Name</strong>, Co-Author 1</p>
-                        <p class="pub-venue">Conference/Journal Name 2024</p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
     <!-- Projects Section -->
     <section id="projects" class="section section-alt">
         <div class="section-container">
             <h2 class="section-title">
-                <span class="title-icon">//</span> Projects
+                <span class="title-icon">//</span> 项目
             </h2>
             <div class="projects-grid" id="cfg-projects">
                 <article class="project-card">
@@ -151,11 +111,29 @@
         </div>
     </section>
 
-    <!-- News Section -->
-    <section id="news" class="section">
+    <!-- Skills Section -->
+    <section id="skills" class="section">
         <div class="section-container">
             <h2 class="section-title">
-                <span class="title-icon">//</span> News
+                <span class="title-icon">//</span> 技能
+            </h2>
+            <div class="skills-grid" id="cfg-skills">
+                <div class="skill-category">
+                    <h4 class="skill-category-title">编程语言</h4>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Node.js</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="section section-alt">
+        <div class="section-container">
+            <h2 class="section-title">
+                <span class="title-icon">//</span> 动态
             </h2>
             <div class="news-list" id="cfg-news">
                 <div class="news-item">
@@ -170,10 +148,10 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="section section-alt">
+    <section id="experience" class="section">
         <div class="section-container">
             <h2 class="section-title">
-                <span class="title-icon">//</span> Experience
+                <span class="title-icon">//</span> 经历
             </h2>
             <div class="experience-grid" id="cfg-experience">
                 <div class="exp-category">
@@ -191,14 +169,17 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section id="contact" class="section section-alt">
         <div class="section-container">
             <h2 class="section-title">
-                <span class="title-icon">//</span> Contact
+                <span class="title-icon">//</span> 联系
             </h2>
-            <div class="contact-content">
-                <p>Feel free to reach out!</p>
-                <p>Email: your.email@university.edu</p>
+            <div class="contact-content" id="cfg-contact">
+                <p>欢迎联系我！</p>
+                <div class="contact-links">
+                    <a href="https://blog.346247.xyz/" target="_blank" class="contact-link">📝 博客</a>
+                    <a href="https://blog.346247.xyz/atom.xml" target="_blank" class="contact-link">📡 RSS订阅</a>
+                </div>
             </div>
         </div>
     </section>
@@ -206,7 +187,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2025 Your Name. Academic Homepage Template.</p>
+            <p>&copy; 2026 Fly. Personal Homepage.</p>
         </div>
     </footer>
 

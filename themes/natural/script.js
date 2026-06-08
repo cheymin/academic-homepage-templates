@@ -43,15 +43,18 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof USER_CONFIG === 'undefined') return;
   populateSimpleFields(USER_CONFIG);
   populateLists(USER_CONFIG);
+  populateStats(USER_CONFIG);
+  populateSkills(USER_CONFIG);
+  populateContact(USER_CONFIG);
 });
 
 function populateSimpleFields(cfg) {
   document.querySelectorAll('[data-config]').forEach(el => {
     const key = el.dataset.config;
-    if (key === 'role_university') el.textContent = `${cfg.role} at ${cfg.university}`;
+    if (key === 'role_university') el.textContent = `${cfg.role} @ ${cfg.university}`;
     else if (cfg[key] !== undefined) el.textContent = cfg[key];
   });
-  if (cfg.name) document.title = `${cfg.name} | Academic Homepage`;
+  if (cfg.name) document.title = `${cfg.name} | Personal Homepage`;
   if (cfg.photo) {
     const av = document.querySelector('.image-placeholder, .hero-photo');
     if (av) av.innerHTML = `<img src="${cfg.photo}" alt="${cfg.name}" style="width:100%;height:100%;object-fit:cover;border-radius:inherit">`;
@@ -63,9 +66,57 @@ function boldName(authors, name) {
   return authors.replace(name, `<strong>${name}</strong>`);
 }
 
+function populateStats(cfg) {
+  const statsContainer = document.getElementById('cfg-stats');
+  if (statsContainer && cfg.stats?.length) {
+    statsContainer.innerHTML = cfg.stats.map(s => `
+      <div class="stat">
+        <span class="stat-number">${s.value}</span>
+        <span class="stat-label">${s.label}</span>
+      </div>`).join('');
+  }
+}
+
+function populateSkills(cfg) {
+  const skillsContainer = document.getElementById('cfg-skills');
+  if (skillsContainer && cfg.skills?.length) {
+    skillsContainer.innerHTML = cfg.skills.map(s => `
+      <div class="skill-category">
+        <h4 class="skill-category-title">${s.category}</h4>
+        <div class="skill-tags">
+          ${s.items.map(item => `<span class="tag">${item}</span>`).join('')}
+        </div>
+      </div>`).join('');
+  }
+}
+
+function populateContact(cfg) {
+  const contactContent = document.getElementById('cfg-contact');
+  if (contactContent && cfg.links) {
+    let html = '<p>欢迎联系我！</p><div class="contact-links">';
+    if (cfg.email) {
+      html += `<a href="mailto:${cfg.email}" class="contact-link">📧 ${cfg.email}</a>`;
+    }
+    if (cfg.links.blog) {
+      html += `<a href="${cfg.links.blog}" target="_blank" class="contact-link">📝 博客</a>`;
+    }
+    if (cfg.links.rss) {
+      html += `<a href="${cfg.links.rss}" target="_blank" class="contact-link">📡 RSS订阅</a>`;
+    }
+    if (cfg.links.github) {
+      html += `<a href="${cfg.links.github}" target="_blank" class="contact-link">💻 GitHub</a>`;
+    }
+    html += '</div>';
+    contactContent.innerHTML = html;
+  }
+}
+
 function populateLists(cfg) {
   const pubList = document.getElementById('cfg-publications');
-  if (pubList && cfg.publications?.length) {
+  const pubSection = document.getElementById('publications');
+  if (pubSection && (!cfg.publications || cfg.publications.length === 0)) {
+    pubSection.style.display = 'none';
+  } else if (pubList && cfg.publications?.length) {
     pubList.innerHTML = cfg.publications.map(p => `
       <article class="pub-card" data-year="${p.year}">
         <div class="pub-year">${p.year}</div>

@@ -756,6 +756,45 @@ a:hover {
 }
 
 /* ========================================
+   Skills - Organic Grid
+   ======================================== */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+}
+
+.skill-category {
+    padding: var(--space-lg);
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
+}
+
+.skill-category:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.skill-category-title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+}
+
+/* ========================================
    Contact - Friendly Links
    ======================================== */
 
@@ -779,8 +818,8 @@ a:hover {
     gap: var(--space-md);
 }
 
-.contact-item {
-    display: flex;
+.contact-link {
+    display: inline-flex;
     align-items: center;
     gap: var(--space-sm);
     padding: var(--space-md) var(--space-lg);
@@ -790,9 +829,10 @@ a:hover {
     color: var(--text-secondary);
     transition: all var(--transition-fast);
     cursor: pointer;
+    text-decoration: none;
 }
 
-.contact-item:hover {
+.contact-link:hover {
     border-color: var(--accent-primary);
     color: var(--accent-primary);
     background: var(--bg-secondary);
@@ -800,7 +840,7 @@ a:hover {
     text-decoration: none;
 }
 
-.contact-item svg {
+.contact-link svg {
     width: 20px;
     height: 20px;
 }
@@ -925,10 +965,14 @@ a:hover {
         align-items: center;
     }
 
-    .contact-item {
+    .contact-link {
         width: 100%;
         max-width: 300px;
         justify-content: center;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
 }
 
